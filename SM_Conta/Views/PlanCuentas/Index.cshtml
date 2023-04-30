@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SM_Conta.Models.PlanCuenta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_plan_cta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_plan_cta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_plan_cta })
+        </td>
+    </tr>
+}
+
+</table>

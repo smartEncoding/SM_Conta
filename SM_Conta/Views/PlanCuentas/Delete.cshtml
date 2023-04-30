@@ -1,0 +1,176 @@
+﻿@model SM_Conta.Models.PlanCuenta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PlanCuenta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pertence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pertence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Principal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Principal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Analisis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Analisis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capital)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cons_Banc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cons_Banc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_analisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_analisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Est_Resu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Est_Resu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Es_Pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Es_Pago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapPropio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapPropio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActFijo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActFijo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cp_ActNorm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cp_ActNorm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cp_Into)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cp_Into)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cp_Complem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cp_Complem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cp_PasExig)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cp_PasExig)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
