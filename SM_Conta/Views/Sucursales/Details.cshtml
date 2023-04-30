@@ -1,0 +1,314 @@
+﻿@model SM_Conta.Models.Sucursal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sucursal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ciudad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usa_Exento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usa_Exento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usa_F_Mixt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usa_F_Mixt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imp_2_Cat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imp_2_Cat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hon_X_Pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hon_X_Pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Esp_Petr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Esp_Petr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cred_Iva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cred_Iva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deb_Iva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deb_Iva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ret_Iva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ret_Iva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Esp_Benc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Esp_Benc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_Clte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_Clte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_Pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_Pro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.caja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.caja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_Bol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_Bol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_I_Clte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_I_Clte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_I_Prov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_I_Prov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_COMBUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_COMBUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_I_HONO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_I_HONO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Membrete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Membrete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_P_BOL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_P_BOL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_PPM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_PPM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_DL910)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_DL910)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ch_CARTERA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ch_CARTERA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_EFECT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_EFECT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ch_X_PAGAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ch_X_PAGAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_ICARNE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_ICARNE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dir_IMPORT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dir_IMPORT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cta_Fepp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cta_Fepp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Antic_Cltes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Antic_Cltes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Antic_Prove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Antic_Prove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Imp_no_Rec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Imp_no_Rec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comuna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comuna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

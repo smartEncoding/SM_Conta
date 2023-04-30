@@ -20,20 +20,22 @@ namespace SM_Conta.Models
 
         public DbSet<PlanCuenta> PlanCuentas { get; set; }
 
+        public System.Data.Entity.DbSet<SM_Conta.Models.Sucursal> Sucursales { get; set; }
 
-       /*
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<PlanCuenta>().HasData(
-            new PlanCuenta
-            {
-                Cuenta = 1000000,
-                Nombre = "Activo",
-                Pertence = 0,
-                Nivel = 0,
-                Tipo = 0
-            });
-        }
-       */
+
+        /*
+         protected override void OnModelCreating(ModelBuilder modelBuilder)
+         {
+             modelBuilder.Entity<PlanCuenta>().HasData(
+             new PlanCuenta
+             {
+                 Cuenta = 1000000,
+                 Nombre = "Activo",
+                 Pertence = 0,
+                 Nivel = 0,
+                 Tipo = 0
+             });
+         }
+        */
     }
 }

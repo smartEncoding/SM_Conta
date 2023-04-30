@@ -1,0 +1,249 @@
+﻿@model IEnumerable<SM_Conta.Models.Sucursal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usa_Exento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usa_F_Mixt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imp_2_Cat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hon_X_Pag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Petr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cred_Iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deb_Iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ret_Iva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esp_Benc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_Clte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_Pro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.caja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_Bol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_I_Clte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_I_Prov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_COMBUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_I_HONO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Membrete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_P_BOL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_PPM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_DL910)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ch_CARTERA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_EFECT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ch_X_PAGAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_ICARNE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dir_IMPORT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cta_Fepp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Antic_Cltes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Antic_Prove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imp_no_Rec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usa_Exento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usa_F_Mixt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imp_2_Cat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hon_X_Pag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Petr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cred_Iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deb_Iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ret_Iva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esp_Benc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_Clte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_Pro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.caja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_Bol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_I_Clte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_I_Prov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_COMBUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_I_HONO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Membrete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_P_BOL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_PPM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_DL910)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ch_CARTERA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_EFECT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ch_X_PAGAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_ICARNE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dir_IMPORT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cta_Fepp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Antic_Cltes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Antic_Prove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imp_no_Rec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comuna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

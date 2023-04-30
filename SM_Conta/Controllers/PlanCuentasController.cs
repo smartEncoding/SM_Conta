@@ -50,9 +50,28 @@ namespace SM_Conta.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 planCuenta = ObtienePadre(planCuenta);
                 db.PlanCuentas.Add(planCuenta);
-                db.SaveChanges();
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                    if (ex.InnerException != null &&
+                        ex.InnerException.InnerException != null &&
+                        ex.InnerException.InnerException.Message.Contains("Indice_PlanCta_Cuenta"))
+                    {
+                        ModelState.AddModelError(string.Empty, "Esta Cuenta ya existe, intente otro");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, ex.Message);
+                    }
+                    return View(planCuenta);
+                }
                 return RedirectToAction("Index");
             }
 

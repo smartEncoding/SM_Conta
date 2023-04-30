@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -104,9 +107,6 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlanCuentasController.cs" />
+    <Compile Include="Controllers\SucursalesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,12 +192,32 @@
     <Compile Include="Migrations\202304292028586_InitialCreate.Designer.cs">
       <DependentUpon>202304292028586_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304301555219_Error.cs" />
+    <Compile Include="Migrations\202304301555219_Error.Designer.cs">
+      <DependentUpon>202304301555219_Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304301603131_Error1.cs" />
+    <Compile Include="Migrations\202304301603131_Error1.Designer.cs">
+      <DependentUpon>202304301603131_Error1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304301609298_ChangeSucursales.cs" />
+    <Compile Include="Migrations\202304301609298_ChangeSucursales.Designer.cs">
+      <DependentUpon>202304301609298_ChangeSucursales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Banco.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Cuenta_Banco.cs" />
+    <Compile Include="Models\Centro_Costo.cs" />
     <Compile Include="Models\EmpresaContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PlanCuenta.cs" />
+    <Compile Include="Models\Sucursal.cs" />
+    <Compile Include="Models\Tasa_Honorario.cs" />
+    <Compile Include="Models\Tasa_PPm.cs" />
+    <Compile Include="Models\Tasa_Utm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -261,6 +282,11 @@
     <Content Include="Views\PlanCuentas\Details.cshtml" />
     <Content Include="Views\PlanCuentas\Edit.cshtml" />
     <Content Include="Views\PlanCuentas\Index.cshtml" />
+    <Content Include="Views\Sucursales\Create.cshtml" />
+    <Content Include="Views\Sucursales\Delete.cshtml" />
+    <Content Include="Views\Sucursales\Details.cshtml" />
+    <Content Include="Views\Sucursales\Edit.cshtml" />
+    <Content Include="Views\Sucursales\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -281,6 +307,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304292028586_InitialCreate.resx">
       <DependentUpon>202304292028586_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304301555219_Error.resx">
+      <DependentUpon>202304301555219_Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304301603131_Error1.resx">
+      <DependentUpon>202304301603131_Error1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304301609298_ChangeSucursales.resx">
+      <DependentUpon>202304301609298_ChangeSucursales.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

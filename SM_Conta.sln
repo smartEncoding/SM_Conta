@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM_Conta", "SM_Conta\SM_Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxes", "..\Taxes\Taxes\Taxes.csproj", "{55886423-3B4C-4828-8300-9EF1968F5EC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaSofia", "..\StaSofia\StaSofia.csproj", "{18798613-3CC5-45FF-85CE-6D4ACEF2BD03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{55886423-3B4C-4828-8300-9EF1968F5EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55886423-3B4C-4828-8300-9EF1968F5EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55886423-3B4C-4828-8300-9EF1968F5EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18798613-3CC5-45FF-85CE-6D4ACEF2BD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18798613-3CC5-45FF-85CE-6D4ACEF2BD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18798613-3CC5-45FF-85CE-6D4ACEF2BD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18798613-3CC5-45FF-85CE-6D4ACEF2BD03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
