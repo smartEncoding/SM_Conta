@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SM_Conta.Models.Sucursal>
+﻿@model IEnumerable<SM_Conta.Models.Centro_Costo>
 
 @{
     ViewBag.Title = "Index";
@@ -12,19 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ciudad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comuna)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Activo)
@@ -35,19 +23,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Codigo)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ciudad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comuna)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Activo)

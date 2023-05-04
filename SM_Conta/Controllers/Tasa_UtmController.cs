@@ -6,131 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using SM_Conta.Models;
 
 namespace SM_Conta.Controllers
 {
-    public class SucursalesController : Controller
+    public class Tasa_UtmController : Controller
     {
         private EmpresaContext db = new EmpresaContext();
 
-        // GET: Sucursales
+        // GET: Tasa_Utm
         public ActionResult Index()
         {
-            return View(db.Sucursales.ToList());
-        }
-        public string OPtionPopup(string seleccionado)
-        {
-            IEnumerable<Sucursal> Lista = db.Sucursales.ToList();
-            List<object> objects = new List<object>();
-
-            //Tranform it to Json object
-            foreach (var item in Lista)
-            {
-                IDictionary<string, object> record = new Dictionary<string, object>();
-                record.Add(item.Id.ToString(), item.Nombre);
-                objects.Add(record);
-            }
-            string json = string.Empty;
-            json = JsonConvert.SerializeObject(objects);
-
-            return json;
+            return View(db.Tasa_Utm.ToList());
         }
 
-
-
-        // GET: Sucursales/Details/5
+        // GET: Tasa_Utm/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Utm tasa_Utm = db.Tasa_Utm.Find(id);
+            if (tasa_Utm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Utm);
         }
 
-        // GET: Sucursales/Create
+        // GET: Tasa_Utm/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sucursales/Create
+        // POST: Tasa_Utm/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Create([Bind(Include = "Id,Anio,Mes01,Mes02,Mes03,Mes04,Mes05,Mes06,Mes07,Mes08,Mes09,Mes10,Mes11,Mes12")] Tasa_Utm tasa_Utm)
         {
             if (ModelState.IsValid)
             {
-                db.Sucursales.Add(sucursal);
+                db.Tasa_Utm.Add(tasa_Utm);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(sucursal);
+            return View(tasa_Utm);
         }
 
-        // GET: Sucursales/Edit/5
+        // GET: Tasa_Utm/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Utm tasa_Utm = db.Tasa_Utm.Find(id);
+            if (tasa_Utm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Utm);
         }
 
-        // POST: Sucursales/Edit/5
+        // POST: Tasa_Utm/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Edit([Bind(Include = "Id,Anio,Mes01,Mes02,Mes03,Mes04,Mes05,Mes06,Mes07,Mes08,Mes09,Mes10,Mes11,Mes12")] Tasa_Utm tasa_Utm)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sucursal).State = EntityState.Modified;
+                db.Entry(tasa_Utm).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sucursal);
+            return View(tasa_Utm);
         }
 
-        // GET: Sucursales/Delete/5
+        // GET: Tasa_Utm/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Utm tasa_Utm = db.Tasa_Utm.Find(id);
+            if (tasa_Utm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Utm);
         }
 
-        // POST: Sucursales/Delete/5
+        // POST: Tasa_Utm/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Sucursal sucursal = db.Sucursales.Find(id);
-            db.Sucursales.Remove(sucursal);
+            Tasa_Utm tasa_Utm = db.Tasa_Utm.Find(id);
+            db.Tasa_Utm.Remove(tasa_Utm);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -7,13 +7,13 @@ namespace SM_Conta.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class TasasVarias : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TasasVarias));
         
         string IMigrationMetadata.Id
         {
-            get { return "202304292028586_InitialCreate"; }
+            get { return "202305032038296_TasasVarias"; }
         }
         
         string IMigrationMetadata.Source

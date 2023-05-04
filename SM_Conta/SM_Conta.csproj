@@ -181,43 +181,53 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BancosController.cs" />
+    <Compile Include="Controllers\Centro_CostoController.cs" />
+    <Compile Include="Controllers\Cuentas_BancoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\PlanCuentasController.cs" />
     <Compile Include="Controllers\SucursalesController.cs" />
+    <Compile Include="Controllers\Tasa_HonorarioController.cs" />
+    <Compile Include="Controllers\Tasa_PPmController.cs" />
+    <Compile Include="Controllers\Tasa_UtmController.cs" />
+    <Compile Include="Controllers\Tipos_referenciaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202304292028586_InitialCreate.cs" />
-    <Compile Include="Migrations\202304292028586_InitialCreate.Designer.cs">
-      <DependentUpon>202304292028586_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202305031437337_Initial.cs" />
+    <Compile Include="Migrations\202305031437337_Initial.Designer.cs">
+      <DependentUpon>202305031437337_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202304301555219_Error.cs" />
-    <Compile Include="Migrations\202304301555219_Error.Designer.cs">
-      <DependentUpon>202304301555219_Error.cs</DependentUpon>
+    <Compile Include="Migrations\202305031458395_Bancos.cs" />
+    <Compile Include="Migrations\202305031458395_Bancos.Designer.cs">
+      <DependentUpon>202305031458395_Bancos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202304301603131_Error1.cs" />
-    <Compile Include="Migrations\202304301603131_Error1.Designer.cs">
-      <DependentUpon>202304301603131_Error1.cs</DependentUpon>
+    <Compile Include="Migrations\202305032038296_TasasVarias.cs" />
+    <Compile Include="Migrations\202305032038296_TasasVarias.Designer.cs">
+      <DependentUpon>202305032038296_TasasVarias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202304301609298_ChangeSucursales.cs" />
-    <Compile Include="Migrations\202304301609298_ChangeSucursales.Designer.cs">
-      <DependentUpon>202304301609298_ChangeSucursales.cs</DependentUpon>
+    <Compile Include="Migrations\202305040338479_TiposReferencia.cs" />
+    <Compile Include="Migrations\202305040338479_TiposReferencia.Designer.cs">
+      <DependentUpon>202305040338479_TiposReferencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Cuenta_Banco.cs" />
+    <Compile Include="Models\Cuentas_Banco.cs" />
     <Compile Include="Models\Centro_Costo.cs" />
     <Compile Include="Models\EmpresaContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Modulos.cs" />
     <Compile Include="Models\PlanCuenta.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Models\Tasa_Honorario.cs" />
     <Compile Include="Models\Tasa_PPm.cs" />
     <Compile Include="Models\Tasa_Utm.cs" />
+    <Compile Include="Models\tipos_referencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -287,6 +297,46 @@
     <Content Include="Views\Sucursales\Details.cshtml" />
     <Content Include="Views\Sucursales\Edit.cshtml" />
     <Content Include="Views\Sucursales\Index.cshtml" />
+    <Content Include="Views\Bancos\Create.cshtml" />
+    <Content Include="Views\Bancos\Delete.cshtml" />
+    <Content Include="Views\Bancos\Details.cshtml" />
+    <Content Include="Views\Bancos\Edit.cshtml" />
+    <Content Include="Views\Bancos\Index.cshtml" />
+    <Content Include="Views\Centro_Costo\Create.cshtml" />
+    <Content Include="Views\Centro_Costo\Delete.cshtml" />
+    <Content Include="Views\Centro_Costo\Details.cshtml" />
+    <Content Include="Views\Centro_Costo\Edit.cshtml" />
+    <Content Include="Views\Centro_Costo\Index.cshtml" />
+    <Content Include="Views\Cuentas_Banco\Create.cshtml" />
+    <Content Include="Views\Cuentas_Banco\Delete.cshtml" />
+    <Content Include="Views\Cuentas_Banco\Details.cshtml" />
+    <Content Include="Views\Cuentas_Banco\Edit.cshtml" />
+    <Content Include="Views\Cuentas_Banco\Index.cshtml" />
+    <Content Include="Views\Tasa_Honorario\Create.cshtml" />
+    <Content Include="Views\Tasa_Honorario\Delete.cshtml" />
+    <Content Include="Views\Tasa_Honorario\Details.cshtml" />
+    <Content Include="Views\Tasa_Honorario\Edit.cshtml" />
+    <Content Include="Views\Tasa_Honorario\Index.cshtml" />
+    <Content Include="Views\Tasa_Utm\Create.cshtml" />
+    <Content Include="Views\Tasa_Utm\Delete.cshtml" />
+    <Content Include="Views\Tasa_Utm\Details.cshtml" />
+    <Content Include="Views\Tasa_Utm\Edit.cshtml" />
+    <Content Include="Views\Tasa_Utm\Index.cshtml" />
+    <Content Include="Views\Tasa_PPm\Create.cshtml" />
+    <Content Include="Views\Tasa_PPm\Delete.cshtml" />
+    <Content Include="Views\Tasa_PPm\Details.cshtml" />
+    <Content Include="Views\Tasa_PPm\Edit.cshtml" />
+    <Content Include="Views\Tasa_PPm\Index.cshtml" />
+    <Content Include="Views\Modulos\Create.cshtml" />
+    <Content Include="Views\Modulos\Delete.cshtml" />
+    <Content Include="Views\Modulos\Details.cshtml" />
+    <Content Include="Views\Modulos\Edit.cshtml" />
+    <Content Include="Views\Modulos\Index.cshtml" />
+    <Content Include="Views\Tipos_referencia\Create.cshtml" />
+    <Content Include="Views\Tipos_referencia\Delete.cshtml" />
+    <Content Include="Views\Tipos_referencia\Details.cshtml" />
+    <Content Include="Views\Tipos_referencia\Edit.cshtml" />
+    <Content Include="Views\Tipos_referencia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,17 +355,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202304292028586_InitialCreate.resx">
-      <DependentUpon>202304292028586_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305031437337_Initial.resx">
+      <DependentUpon>202305031437337_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304301555219_Error.resx">
-      <DependentUpon>202304301555219_Error.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305031458395_Bancos.resx">
+      <DependentUpon>202305031458395_Bancos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304301603131_Error1.resx">
-      <DependentUpon>202304301603131_Error1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305032038296_TasasVarias.resx">
+      <DependentUpon>202305032038296_TasasVarias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304301609298_ChangeSucursales.resx">
-      <DependentUpon>202304301609298_ChangeSucursales.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305040338479_TiposReferencia.resx">
+      <DependentUpon>202305040338479_TiposReferencia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

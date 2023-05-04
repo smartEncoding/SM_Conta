@@ -7,13 +7,13 @@ namespace SM_Conta.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeSucursales : IMigrationMetadata
+    public sealed partial class Bancos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeSucursales));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Bancos));
         
         string IMigrationMetadata.Id
         {
-            get { return "202304301609298_ChangeSucursales"; }
+            get { return "202305031458395_Bancos"; }
         }
         
         string IMigrationMetadata.Source

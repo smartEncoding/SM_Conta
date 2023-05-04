@@ -7,13 +7,13 @@ namespace SM_Conta.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Error : IMigrationMetadata
+    public sealed partial class TiposReferencia : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Error));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TiposReferencia));
         
         string IMigrationMetadata.Id
         {
-            get { return "202304301555219_Error"; }
+            get { return "202305040338479_TiposReferencia"; }
         }
         
         string IMigrationMetadata.Source

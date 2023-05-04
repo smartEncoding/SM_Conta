@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SM_Conta.Models.Sucursal>
+﻿@model IEnumerable<SM_Conta.Models.Cuentas_Banco>
 
 @{
     ViewBag.Title = "Index";
@@ -12,22 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Codigo)
+            @Html.DisplayNameFor(model => model.Numero)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.Banco)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ciudad)
+            @Html.DisplayNameFor(model => model.Cta_ctble)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comuna)
+            @Html.DisplayNameFor(model => model.Bco_cta)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fk_Codigo_Banco)
         </th>
         <th></th>
     </tr>
@@ -35,22 +35,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Codigo)
+            @Html.DisplayFor(modelItem => item.Numero)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
+            @Html.DisplayFor(modelItem => item.Banco)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ciudad)
+            @Html.DisplayFor(modelItem => item.Cta_ctble)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comuna)
+            @Html.DisplayFor(modelItem => item.Bco_cta)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fk_Codigo_Banco)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

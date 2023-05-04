@@ -6,131 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using SM_Conta.Models;
 
 namespace SM_Conta.Controllers
 {
-    public class SucursalesController : Controller
+    public class Tasa_PPmController : Controller
     {
         private EmpresaContext db = new EmpresaContext();
 
-        // GET: Sucursales
+        // GET: Tasa_PPm
         public ActionResult Index()
         {
-            return View(db.Sucursales.ToList());
-        }
-        public string OPtionPopup(string seleccionado)
-        {
-            IEnumerable<Sucursal> Lista = db.Sucursales.ToList();
-            List<object> objects = new List<object>();
-
-            //Tranform it to Json object
-            foreach (var item in Lista)
-            {
-                IDictionary<string, object> record = new Dictionary<string, object>();
-                record.Add(item.Id.ToString(), item.Nombre);
-                objects.Add(record);
-            }
-            string json = string.Empty;
-            json = JsonConvert.SerializeObject(objects);
-
-            return json;
+            return View(db.Tasa_PPm.ToList());
         }
 
-
-
-        // GET: Sucursales/Details/5
+        // GET: Tasa_PPm/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_PPm tasa_PPm = db.Tasa_PPm.Find(id);
+            if (tasa_PPm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_PPm);
         }
 
-        // GET: Sucursales/Create
+        // GET: Tasa_PPm/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sucursales/Create
+        // POST: Tasa_PPm/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Create([Bind(Include = "Id,Anio,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12")] Tasa_PPm tasa_PPm)
         {
             if (ModelState.IsValid)
             {
-                db.Sucursales.Add(sucursal);
+                db.Tasa_PPm.Add(tasa_PPm);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(sucursal);
+            return View(tasa_PPm);
         }
 
-        // GET: Sucursales/Edit/5
+        // GET: Tasa_PPm/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_PPm tasa_PPm = db.Tasa_PPm.Find(id);
+            if (tasa_PPm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_PPm);
         }
 
-        // POST: Sucursales/Edit/5
+        // POST: Tasa_PPm/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Edit([Bind(Include = "Id,Anio,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12")] Tasa_PPm tasa_PPm)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sucursal).State = EntityState.Modified;
+                db.Entry(tasa_PPm).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sucursal);
+            return View(tasa_PPm);
         }
 
-        // GET: Sucursales/Delete/5
+        // GET: Tasa_PPm/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_PPm tasa_PPm = db.Tasa_PPm.Find(id);
+            if (tasa_PPm == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_PPm);
         }
 
-        // POST: Sucursales/Delete/5
+        // POST: Tasa_PPm/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Sucursal sucursal = db.Sucursales.Find(id);
-            db.Sucursales.Remove(sucursal);
+            Tasa_PPm tasa_PPm = db.Tasa_PPm.Find(id);
+            db.Tasa_PPm.Remove(tasa_PPm);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

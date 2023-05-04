@@ -11,10 +11,12 @@ namespace SM_Conta.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [DefaultValue(0)] 
-        public Nullable<double> tasa { get; set; }
-        public int anio { get; set; }
+        public double Tasa { get; set; }
+
+        [Index("Indice_Tasa_Honor_Anio", IsUnique = true)]
+        public int Anio { get; set; }
     }
 }

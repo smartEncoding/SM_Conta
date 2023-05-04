@@ -27,7 +27,7 @@ namespace SM_Conta.Models
         public string Nombre { get; set; }
         public int Pertence { get; set; }
         
-        [DefaultValue(false)] 
+            [DefaultValue(false)] 
         public Boolean Principal { get; set; }
         
         [DefaultValue(false)] 

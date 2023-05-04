@@ -6,131 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using SM_Conta.Models;
 
 namespace SM_Conta.Controllers
 {
-    public class SucursalesController : Controller
+    public class Tasa_HonorarioController : Controller
     {
         private EmpresaContext db = new EmpresaContext();
 
-        // GET: Sucursales
+        // GET: Tasa_Honorario
         public ActionResult Index()
         {
-            return View(db.Sucursales.ToList());
-        }
-        public string OPtionPopup(string seleccionado)
-        {
-            IEnumerable<Sucursal> Lista = db.Sucursales.ToList();
-            List<object> objects = new List<object>();
-
-            //Tranform it to Json object
-            foreach (var item in Lista)
-            {
-                IDictionary<string, object> record = new Dictionary<string, object>();
-                record.Add(item.Id.ToString(), item.Nombre);
-                objects.Add(record);
-            }
-            string json = string.Empty;
-            json = JsonConvert.SerializeObject(objects);
-
-            return json;
+            return View(db.Tasa_Honorario.ToList());
         }
 
-
-
-        // GET: Sucursales/Details/5
+        // GET: Tasa_Honorario/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Honorario tasa_Honorario = db.Tasa_Honorario.Find(id);
+            if (tasa_Honorario == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Honorario);
         }
 
-        // GET: Sucursales/Create
+        // GET: Tasa_Honorario/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sucursales/Create
+        // POST: Tasa_Honorario/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Create([Bind(Include = "Id,Tasa,Anio")] Tasa_Honorario tasa_Honorario)
         {
             if (ModelState.IsValid)
             {
-                db.Sucursales.Add(sucursal);
+                db.Tasa_Honorario.Add(tasa_Honorario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(sucursal);
+            return View(tasa_Honorario);
         }
 
-        // GET: Sucursales/Edit/5
+        // GET: Tasa_Honorario/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Honorario tasa_Honorario = db.Tasa_Honorario.Find(id);
+            if (tasa_Honorario == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Honorario);
         }
 
-        // POST: Sucursales/Edit/5
+        // POST: Tasa_Honorario/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Edit([Bind(Include = "Id,Tasa,Anio")] Tasa_Honorario tasa_Honorario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sucursal).State = EntityState.Modified;
+                db.Entry(tasa_Honorario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sucursal);
+            return View(tasa_Honorario);
         }
 
-        // GET: Sucursales/Delete/5
+        // GET: Tasa_Honorario/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Tasa_Honorario tasa_Honorario = db.Tasa_Honorario.Find(id);
+            if (tasa_Honorario == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(tasa_Honorario);
         }
 
-        // POST: Sucursales/Delete/5
+        // POST: Tasa_Honorario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Sucursal sucursal = db.Sucursales.Find(id);
-            db.Sucursales.Remove(sucursal);
+            Tasa_Honorario tasa_Honorario = db.Tasa_Honorario.Find(id);
+            db.Tasa_Honorario.Remove(tasa_Honorario);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -6,131 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 using SM_Conta.Models;
 
 namespace SM_Conta.Controllers
 {
-    public class SucursalesController : Controller
+    public class BancosController : Controller
     {
         private EmpresaContext db = new EmpresaContext();
 
-        // GET: Sucursales
+        // GET: Bancos
         public ActionResult Index()
         {
-            return View(db.Sucursales.ToList());
-        }
-        public string OPtionPopup(string seleccionado)
-        {
-            IEnumerable<Sucursal> Lista = db.Sucursales.ToList();
-            List<object> objects = new List<object>();
-
-            //Tranform it to Json object
-            foreach (var item in Lista)
-            {
-                IDictionary<string, object> record = new Dictionary<string, object>();
-                record.Add(item.Id.ToString(), item.Nombre);
-                objects.Add(record);
-            }
-            string json = string.Empty;
-            json = JsonConvert.SerializeObject(objects);
-
-            return json;
+            return View(db.Bancos.ToList());
         }
 
-
-
-        // GET: Sucursales/Details/5
+        // GET: Bancos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Banco banco = db.Bancos.Find(id);
+            if (banco == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(banco);
         }
 
-        // GET: Sucursales/Create
+        // GET: Bancos/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sucursales/Create
+        // POST: Bancos/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Create([Bind(Include = "Codigo,Nombre,Tarjeta,Activo")] Banco banco)
         {
             if (ModelState.IsValid)
             {
-                db.Sucursales.Add(sucursal);
+                db.Bancos.Add(banco);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(sucursal);
+            return View(banco);
         }
 
-        // GET: Sucursales/Edit/5
+        // GET: Bancos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Banco banco = db.Bancos.Find(id);
+            if (banco == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(banco);
         }
 
-        // POST: Sucursales/Edit/5
+        // POST: Bancos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Codigo,Nombre,Ciudad,Usa_Exento,Usa_F_Mixt,Imp_2_Cat,Hon_X_Pag,Esp_Petr,Cred_Iva,Deb_Iva,Ret_Iva,Esp_Benc,Cta_Clte,Cta_Pro,caja,Cta_Bol,Cta_I_Clte,Cta_I_Prov,Cta_COMBUS,Cta_I_HONO,Membrete,Domicilio,Cta_P_BOL,Cta_PPM,Cta_DL910,Ch_CARTERA,Cta_EFECT,Ch_X_PAGAR,Cta_ICARNE,Dir_IMPORT,Cta_Fepp,Antic_Cltes,Antic_Prove,Imp_no_Rec,Direccion,Comuna,Activo")] Sucursal sucursal)
+        public ActionResult Edit([Bind(Include = "Codigo,Nombre,Tarjeta,Activo")] Banco banco)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(sucursal).State = EntityState.Modified;
+                db.Entry(banco).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(sucursal);
+            return View(banco);
         }
 
-        // GET: Sucursales/Delete/5
+        // GET: Bancos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Sucursal sucursal = db.Sucursales.Find(id);
-            if (sucursal == null)
+            Banco banco = db.Bancos.Find(id);
+            if (banco == null)
             {
                 return HttpNotFound();
             }
-            return View(sucursal);
+            return View(banco);
         }
 
-        // POST: Sucursales/Delete/5
+        // POST: Bancos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Sucursal sucursal = db.Sucursales.Find(id);
-            db.Sucursales.Remove(sucursal);
+            Banco banco = db.Bancos.Find(id);
+            db.Bancos.Remove(banco);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
